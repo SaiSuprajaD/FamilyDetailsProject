@@ -1,0 +1,147 @@
+﻿@using FamilyDetailsProject.Models
+@model dynamic
+@{
+    Layout = null;
+}
+<meta name="viewport" content="width=device-width" />
+<title>display</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://www.markuptag.com/bootstrap/5/css/bootstrap.min.css">
+<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+     <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajax-unobtrusive/3.2.6/jquery.unobtrusive-ajax.min.js"></script>
+  
+
+    <script>
+    $(document).ready(function () {
+
+        $("#InsertAddress").click(function () {
+            $("#div1").load("/Family/InsertAddress");
+        });
+
+    });
+</script>
+   
+          <div class="container">
+        <div class="col-md-12">
+               
+       <h4>Display Address Details</h4> 
+    </div>
+    <div>
+        </div>
+        </div>
+      
+         @*<a asp-action="InsertAddress" class="btn btn-outline-dark">Create</a>*@
+         <button type="button" id="InsertAddress"> Create Address</button>
+
+    <div id="div1"></div>
+           <div class="container">
+         <div class="col-md-12">
+               
+    <table class="table table-dark table-hover">
+   @* <table class="table table-bordered">*@
+        <tr>
+            <th>ID</th>
+            <th>State </th>
+            <th>Mandal</th>
+            <th>District</th>
+            <th>Street</th>
+            <th>Pincode</th>
+           
+          
+        </tr>
+
+        @foreach (AddressDetails customers in Model.AddressDetails)
+        {
+            <tr>
+                <td>@customers.ID</td>
+                <td>@customers.State</td>
+                <td>@customers.Mandal</td>
+                <td>@customers.District</td>
+                <td>@customers.Street</td>
+                <td>@customers.Pincode</td>
+               
+            </tr>
+           
+        }
+        
+        <tr>
+  
+
+    </table>
+
+    </div>
+    </div>
+    <hr />
+    <meta name="viewport" content="width=device-width" />
+<title>display</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://www.markuptag.com/bootstrap/5/css/bootstrap.min.css">
+<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+     <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajax-unobtrusive/3.2.6/jquery.unobtrusive-ajax.min.js"></script>
+   
+    <script>
+    $(document).ready(function () {
+
+        $("#InsertFamily").click(function () {
+            $("#div1").load("/Family/InsertFamily");
+        });
+
+    });
+</script>
+
+    
+    @*<a asp-action="InsertFamily" class="btn btn-outline-dark">Create</a>*@
+    <button type="button" id="InsertFamily">Create family</button>
+
+    <div id="div1"></div>
+   <div class="container">
+        <div class="col-md-12">
+         <h4>Display Family Details</h4> 
+    </div>
+    </div>
+      <div class="container">
+         <div class="col-md-12">
+             
+    <table class="table table-dark table-hover">
+  @*  <table class="table table-bordered">*@
+        <tr>
+            <th>ID</th>
+            <th>Name </th>
+            <th>FatherName</th>
+             <th>MotherName </th>
+            <th>BrotherName</th>
+           
+        </tr>
+        @foreach (FamilyDetails employee in Model.FamilyDetails)
+        {
+            <tr>
+                <td>@employee.ID</td>
+                <td>@employee.Name</td>
+                <td>@employee.FatherName</td>
+                 <td>@employee.MotherName</td>
+                <td>@employee.BrotherName</td>
+
+            </tr>
+        }
+    </table>
+  </div>
+  </div>
+
